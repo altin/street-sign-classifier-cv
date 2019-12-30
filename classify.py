@@ -40,13 +40,13 @@ def write_on_image(image, text):
 
 def identify(file_name):
     # convert images to grayscale
-    forty_template = cv2.imread("speed_40_template.bmp")
+    forty_template = cv2.imread("images/speed_40_template.bmp")
     #print('forty template', forty_template.shape)
     forty_template = cv2.cvtColor(forty_template, cv2.COLOR_BGR2GRAY)
-    eighty_template = cv2.imread("speed_80_template.bmp")
+    eighty_template = cv2.imread("images/speed_80_template.bmp")
     #print('eighty template', eighty_template.shape)
     eighty_template = cv2.cvtColor(eighty_template, cv2.COLOR_BGR2GRAY)
-    one_hundred_template = cv2.imread("speed_100_template.bmp")
+    one_hundred_template = cv2.imread("images/speed_100_template.bmp")
     #print('one hundred template', one_hundred_template.shape)
     one_hundred_template = cv2.cvtColor(one_hundred_template, cv2.COLOR_BGR2GRAY)
     
@@ -95,20 +95,20 @@ def identify(file_name):
     # save the results
     print(sign_string)
     result = write_on_image(image_original, sign_string)
-    cv2.imwrite(file_string, result)
+    cv2.imwrite("classified/" + file_string, result)
 
 # file_name = file name of image
 # image = prepared image to be tested (grayscale, blurred)
 # templates = the list of templates to match the image to and see which it matches best
 def classify(file_name, image, templates):
     # First, determine the expected result before comparing the sign to a template
-    if file_name == "speedsign3.jpg": # 40 speed
+    if file_name == "images/speedsign3.jpg": # 40 speed
         expected_recog_result = SPEED_LIMIT_40_SIGN
-    elif file_name == "speedsign16.jpg": # 70 speed
+    elif file_name == "images/speedsign16.jpg": # 70 speed
         expected_recog_result = NO_MATCH
-    elif file_name == "speedsign14.jpg": # 80 speed
+    elif file_name == "images/speedsign14.jpg": # 80 speed
         expected_recog_result = SPEED_LIMIT_80_SIGN
-    elif file_name == "speedsign4.jpg": # 100 speed
+    elif file_name == "images/speedsign4.jpg": # 100 speed
         expected_recog_result = SPEED_LIMIT_100_SIGN
     
     # Apply canny edge detection to the prepared image
@@ -175,9 +175,9 @@ def order_points(pts):
     return rect
 
 # run classification function
-identify("stop4.jpg")
-identify("yield_sign1.jpg")
-identify("speedsign3.jpg")
-identify("speedsign16.jpg")
-identify("speedsign14.jpg")
-identify("speedsign4.jpg")
+identify("images/stop4.jpg")
+identify("images/yield_sign1.jpg")
+identify("images/speedsign3.jpg")
+identify("images/speedsign16.jpg")
+identify("images/speedsign14.jpg")
+identify("images/speedsign4.jpg")
