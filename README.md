@@ -2,7 +2,7 @@
 Altin Rexhepaj, 2018
 
 ## About
-The goal of this program is to classify images of street signs using a computer vision approach. In particular, I make use of edge detection, image rectification, contour approximation, and template matching.
+The goal of this program is to classify images of street signs using a computer vision approach. In particular, I make use of edge detection, image rectification, contour approximation, and template matching to achieve this.
 
 ## How to run
 1. `pip install -r requirements.txt`
