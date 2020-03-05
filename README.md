@@ -10,7 +10,7 @@ The goal of this program is to classify images of street signs using a computer 
 3. Check `classifed/` for the labelled street signs
 
 
-## Screenshot
+## Screenshots
 #### Unclassified
 ![img](/images/yield_sign1.jpg)
 #### Classified
